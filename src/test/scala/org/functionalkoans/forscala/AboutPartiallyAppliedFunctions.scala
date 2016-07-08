@@ -9,14 +9,14 @@ class AboutPartiallyAppliedFunctions extends KoanSuite with ShouldMatchers {
          | doesn't apply any arguments""") {
     def sum(a: Int, b: Int, c: Int) = a + b + c
     val sum3 = sum _
-    sum3(1, 9, 7) should be(__)
-    sum(4, 5, 6) should be(__)
+    sum3(1, 9, 7) should be(17)
+    sum(4, 5, 6) should be(15)
   }
 
   koan("""Partially applied functions can replace any number of arguments""") {
     def sum(a: Int, b: Int, c: Int) = a + b + c
     val sumC = sum(1, 10, _: Int)
-    sumC(4) should be(__)
-    sum(4, 5, 6) should be(__)
+    sumC(4) should be(15)
+    sum(4, 5, 6) should be(15)
   }
 }
