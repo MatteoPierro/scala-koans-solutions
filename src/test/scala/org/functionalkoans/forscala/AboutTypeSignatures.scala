@@ -25,19 +25,19 @@ class AboutTypeSignatures extends KoanSuite {
     }
 
     val intRand = new IntRandomizer
-    (intRand.draw < Int.MaxValue) should be (__)
+    (intRand.draw < Int.MaxValue) should be (true)
   }
 
   koan("Class meta-information can be retrieved by class name by using classOf[className]") {
-    classOf[String].getCanonicalName should be(__)
-    classOf[String].getSimpleName should be(__)
+    classOf[String].getCanonicalName should be("java.lang.String")
+    classOf[String].getSimpleName should be("String")
   }
 
   koan("Class meta-information can be derived from an object reference using getClass()") {
     val zoom = "zoom"
-    zoom.getClass should be(__) // Hint: classOf ...
-    zoom.getClass.getCanonicalName should be(__)
-    zoom.getClass.getSimpleName should be(__)
+    zoom.getClass should be(classOf[String]) // Hint: classOf ...
+    zoom.getClass.getCanonicalName should be("java.lang.String")
+    zoom.getClass.getSimpleName should be("String")
   }
 
   koan("isInstanceOf[className] is used to determine the if an object reference is an instance of given class") {
@@ -53,7 +53,7 @@ class AboutTypeSignatures extends KoanSuite {
     }
 
     val intRand = new IntRandomizer
-    intRand.draw.isInstanceOf[Int] should be(__)
+    intRand.draw.isInstanceOf[Int] should be(true)
   }
 
   koan("asInstanceOf[className] is used to cast one reference to another") {
@@ -71,7 +71,7 @@ class AboutTypeSignatures extends KoanSuite {
     val intRand = new IntRandomizer
     val rand = intRand
     val intRand2 = rand
-    intRand2.isInstanceOf[IntRandomizer] should be(__)
+    intRand2.isInstanceOf[IntRandomizer] should be(true)
   }
 
   koan("asInstanceOf[className] will throw a ClassCastException if a class derived from " +
@@ -95,8 +95,8 @@ class AboutTypeSignatures extends KoanSuite {
   }
 
   koan("null.asInstanceOf[className] can be used to generate basic default values") {
-    null.asInstanceOf[String] should be(__)
-    null.asInstanceOf[Int] should be(__)
-    null.asInstanceOf[Short] should be(__)
+    null.asInstanceOf[String] should be(null)
+    null.asInstanceOf[Int] should be(0)
+    null.asInstanceOf[Short] should be(0)
   }
 }
