@@ -14,7 +14,7 @@ class AboutExtractors extends KoanSuite {
       case _ => "No Batman Joke For You"
     }
 
-    result should be(__)
+    result should be("Where's Batman?")
   }
 
 
@@ -31,10 +31,10 @@ class AboutExtractors extends KoanSuite {
 
     val ChopShop(a, b, c, d) = new Car("Chevy", "Camaro", 1978, 120)
 
-    a should be(__)
-    b should be(__)
-    c should be(__)
-    d should be(__)
+    a should be("Chevy")
+    b should be("Camaro")
+    c should be(1978)
+    d should be(120)
   }
 
 
@@ -50,8 +50,8 @@ class AboutExtractors extends KoanSuite {
       case _ => ("Ford", "Edsel")
     }
 
-    x._1 should be(__)
-    x._2 should be(__)
+    x._1 should be("Chevy")
+    x._2 should be("Camaro")
   }
 
   koan(
@@ -68,8 +68,8 @@ class AboutExtractors extends KoanSuite {
       case _ => ("Ford", "Edsel")
     }
 
-    x._1 should be(__)
-    x._2 should be(__)
+    x._1 should be("Chevy")
+    x._2 should be("Camaro")
   }
 
   koan("As long as the method signatures aren't the same, " +
@@ -88,7 +88,7 @@ class AboutExtractors extends KoanSuite {
       case _ => "Not found"
     }
 
-    result should be(__)
+    result should be("c: Kurt, d: Vonnegut")
   }
 
   koan(
@@ -105,7 +105,7 @@ class AboutExtractors extends KoanSuite {
       case _ => "unknown"
     }
 
-    result should be(__)
+    result should be("make: Chevy, model: Camaro")
   }
 
   koan(
@@ -127,9 +127,9 @@ class AboutExtractors extends KoanSuite {
 
     val Employee(a, b, c) = singri
 
-    a should be(__)
-    b should be(__)
-    c should be(__)
+    a should be("Keerthi")
+    b should be(None)
+    c should be("Singri")
   }
 
   koan("In this koan we use the unapply for pattern matching employee objects") {
@@ -153,6 +153,6 @@ class AboutExtractors extends KoanSuite {
       case _ => "I don't care, going on break"
     }
 
-    result should be(__)
+    result should be("I don't care, going on break")
   }
 }
