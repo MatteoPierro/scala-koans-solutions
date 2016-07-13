@@ -22,6 +22,5 @@ class AboutConstructors extends KoanSuite {
   koan("Class with no class parameters is called with no arguments") {
     // add parameter to make this fail
     val aboutMe = new AboutClassWithNoClassParameter
-
   }
 }
