@@ -10,14 +10,14 @@ class AboutRepeatedParameters extends KoanSuite {
 
   koan( """A repeated parameter must be the last parameter and this will
       | let you add as many extra parameters as needed""".stripMargin('|')) {
-    repeatedParameterMethod(3, "egg", "a delicious sandwich", "protein", "high cholesterol") should be(__)
+    repeatedParameterMethod(3, "egg", "a delicious sandwich", "protein", "high cholesterol") should be("3 eggs can give you a delicious sandwich, protein, high cholesterol")
   }
 
   koan("A repeated parameter can accept a collection as the last parameter but will be considered a single object") {
-    repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol")) should be(__)
+    repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol")) should be("3 eggs can give you List(a delicious sandwich, protein, high cholesterol)")
   }
 
   koan("A repeated parameter can accept a collection,and if you want it expanded, add :_*") {
-    repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol"):_*) should be(__)
+    repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol"):_*) should be("3 eggs can give you a delicious sandwich, protein, high cholesterol")
   }
 }
