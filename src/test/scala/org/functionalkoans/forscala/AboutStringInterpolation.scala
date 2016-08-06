@@ -11,7 +11,7 @@ class AboutStringInterpolation extends KoanSuite with ShouldMatchers {
        |you can then refer to any value or variable within scope
        |This is called string interpolation.""".stripMargin) {
     val helloMessage = "Hello World"
-    s"Application $helloMessage" should be (__)
+    s"Application $helloMessage" should be ("Application Hello World")
   }
 
   koan(
@@ -19,7 +19,7 @@ class AboutStringInterpolation extends KoanSuite with ShouldMatchers {
       |include numbers and strings""".stripMargin) {
     val j = 190
     val k = "mint julips"
-    s"${j -100} bottles of $k on the wall" should be (__)
+    s"${j -100} bottles of $k on the wall" should be ("90 bottles of mint julips on the wall")
   }
 
   koan(
@@ -29,7 +29,7 @@ class AboutStringInterpolation extends KoanSuite with ShouldMatchers {
       |using a % and the format rule after the variable reference.""".stripMargin) {
     val j = 190.4f  // f is to force the number as a float (per java)
     val k = "sparkling water"
-    f"${j - 100}%2.2f bottles of $k%s on the wall" should be (__)
+    f"${j - 100}%2.2f bottles of $k%s on the wall" should be ("90.40 bottles of sparkling water on the wall")
   }
 
 }
