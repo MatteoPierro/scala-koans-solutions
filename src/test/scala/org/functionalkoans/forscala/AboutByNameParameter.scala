@@ -27,7 +27,7 @@ class AboutByNameParameter extends KoanSuite {
       14 + 15
     }
 
-    y should be (__)
+    y should be (Right(29))
   }
 
 
@@ -49,7 +49,7 @@ class AboutByNameParameter extends KoanSuite {
       49 + 20
     }
 
-    y should be (__)
+    y should be (Right(69))
   }
 
   koan("""By name parameters can also be used with an Object and apply to make interesting block-like calls""") {
@@ -63,6 +63,6 @@ class AboutByNameParameter extends KoanSuite {
       x ++ z //concatenate the strings
     }
 
-    result should be (__)
+    result should be ("retzelpay")
   }
 }
