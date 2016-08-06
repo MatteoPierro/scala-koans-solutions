@@ -23,13 +23,13 @@ class AboutStructuralTypes extends KoanSuite with ShouldMatchers{
         "received message: %s".format(quacker.quack)
       }
 
-      onlyThoseThatCanPerformQuacks(new Duck()) should be (__)
-      onlyThoseThatCanPerformQuacks(BadDoctor) should be (__)
+      onlyThoseThatCanPerformQuacks(new Duck()) should be ("received message: Quack")
+      onlyThoseThatCanPerformQuacks(BadDoctor) should be ("received message: Here try these experimental pills")
    }
 
    koan("""Structural typing can also be used to assign values and variables""") {
        val quacker:{def quack:String} = BadDoctor
-       quacker.quack should be (__)
+       quacker.quack should be ("Here try these experimental pills")
    }
 
    koan("""Use a semicolon (;) to add more methods for the structural type""") {
@@ -45,8 +45,8 @@ class AboutStructuralTypes extends KoanSuite with ShouldMatchers{
 
        val someDude: {def speak:String; def move(steps:Int, direction:String):String} = new Human()
        val someBovine: {def speak:String; def move(steps:Int, direction:String):String} = new Cow()
-       someDude.move(4, "North") should be (__)
-       someBovine.move(3, "South") should be (__)
+       someDude.move(4, "North") should be ("Don't want to, rather just chill")
+       someBovine.move(3, "South") should be ("Ok, moving 3 steps..heading South")
    }
 
    koan("""You can use type aliasing if the structural type gets to be too much typing""") {
@@ -61,6 +61,6 @@ class AboutStructuralTypes extends KoanSuite with ShouldMatchers{
      type SpeakerAndMover = {def speak:String; def move(steps:Int, direction:String):String}
 
      val someGoose:SpeakerAndMover = new Goose()
-     someGoose.move(4, "North") should be (__)
+     someGoose.move(4, "North") should be ("Nope, not in winter")
    }
 }
